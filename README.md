@@ -1,32 +1,34 @@
 # Data Logger (and using cool sensors!)
 
-*A lab report by John Q. Student.*
+*A lab report by **Christophe Rimann**.*
 
 ## In The Report
-
-Include your responses to the bold questions on your own fork of [this lab report template](https://github.com/FAR-Lab/IDD-Fa18-Lab2). Include snippets of code that explain what you did. Deliverables are due next Tuesday. Post your lab reports as README.md pages on your GitHub, and post a link to that on your main class hub page.
-
-For this lab, we will be experimenting with a variety of sensors, sending the data to the Arduino serial monitor, writing data to the EEPROM of the Arduino, and then playing the data back.
 
 ## Part A.  Writing to the Serial Monitor
  
 **a. Based on the readings from the serial monitor, what is the range of the analog values being read?**
+We can see that values range from 0-1023.
  
 **b. How many bits of resolution does the analog to digital converter (ADC) on the Arduino have?**
+Given that it has 1024, values, and 2^10 bits, my initial guess would be 10 bits. We can confirm that value [here](https://learn.sparkfun.com/tutorials/analog-to-digital-conversion)!
+
 
 ## Part B. RGB LED
 
 **How might you use this with only the parts in your kit? Show us your solution.**
 
+This question was updated to not include this part.
+
 ## Part C. Voltage Varying Sensors 
  
 ### 1. FSR, Flex Sensor, Photo cell, Softpot
 
-**a. What voltage values do you see from your force sensor?**
+**a. What voltage values do you see from your force sensor?** My force sensor ran from an absolute max of around 1014 (although it was mostly stable at around 1010). The stable min I could reach was 297, with occasional fluctuations to around 290. 
 
-**b. What kind of relationship does the voltage have as a function of the force applied? (e.g., linear?)**
+**b. What kind of relationship does the voltage have as a function of the force applied? (e.g., linear?)** The relationship does not appear to be linear; rather it seems to be one of diminishing marginal returns. As I press a lot harder, the dip voltage drops decreasingly less.
 
 **c. Can you change the LED fading code values so that you get the full range of output voltages from the LED when using your FSR?**
+I don't believe so. This is because we need to change the voltage of each color independent of each other simultaneously in order to get every possible value. If we had two other voltage varying resistors, perhaps we could, but independently, we cannot. 
 
 **d. What resistance do you need to have in series to get a reasonable range of voltages from each sensor?**
 
